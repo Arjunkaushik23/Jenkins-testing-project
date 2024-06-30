@@ -1,12 +1,19 @@
 pipeline {
     agent any
+
     tools {
-            maven 'maven'
-        }
+        maven 'maven' // Use the name you have configured for Maven
+        jdk 'jdk-22' // Use the name you have configured for JDK
+    }
+
+    triggers {
+        githubPush()
+    }
+
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
@@ -16,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'mvn deploy'
+                bat 'mvn spring-boot:run'
             }
         }
     }
