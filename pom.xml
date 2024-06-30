@@ -12,6 +12,7 @@
 	<artifactId>JenkinsProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>JenkinsProject</name>
+	<packaging>war</packaging>
 	<description>Project is to demonstrate the jenkins functionality</description>
 	<url/>
 	<licenses>
