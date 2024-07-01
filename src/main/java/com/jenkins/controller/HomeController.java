@@ -10,4 +10,9 @@ public class HomeController {
     public String homeController(){
         return "Hello Jenkins";
     }
+
+    @GetMapping("/this")
+    public String thisController(){
+        return "Hello This is new thing we add on";
+    }
 }
